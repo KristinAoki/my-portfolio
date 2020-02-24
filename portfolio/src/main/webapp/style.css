@@ -10,6 +10,13 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+# content-photography {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
 #greeting-container {
   margin-top: 20px;
 }
@@ -40,7 +47,7 @@ footer {
     position: relative;
     bottom: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     background-color: #2b7a78;
 }
 
@@ -57,9 +64,5 @@ footer {
 }
 
 .image-thumbnails img:hover {
-  border: thick solid black;
-}
-
-#random-image-container img {
-  margin-top: 20px;
+  border: thin solid black;
 }
