@@ -31,7 +31,7 @@ import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
+/** Servlet that returns comment data */
 @WebServlet("/list-comments")
 public class ListDataServlet extends HttpServlet {
   
