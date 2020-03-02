@@ -15,26 +15,19 @@
 /**
  * Adds a message from data servlet to the page.
  */
-function getData() {
-    console.log('Fetching data.');
-    const responsePromise = fetch('/random-quote');
-    responsePromise.then(handleResponse);
-}
-
-function handleResponse (response) {
-    const textPromise = response.text();
-    textPromise.then(addQuoteToDom);
-}
-
-function addDataToDom(quote) {
-  console.log('Adding data to dom: ' + data);
-
-  const dataContainer = document.getElementById('data-container');
-  dataContainer.innerText = data;
-}
 
 function getDataUsingArrowFunctions() {
-  fetch('/data').then(response => response.text()).then((data) => {
-    document.getElementById('data-container').innerText = data;
+  fetch('/data').then(response => response.json()).then((comments) => {
+    const historyEl = document.getElementById('history');
+    comments.history.forEach((line) => {
+      historyEl.appendChild(createListElement(line));
+    });
   });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
