@@ -14,24 +14,18 @@
 
 package com.google.sps.data;
 
-import java.util.ArrayList;
-import java.util.List;
+// A comment to be listes.
+public final class DataComment {
 
-/**
- * Class representing the subtraction game, where players take turns subtracting from 21 to reach 0.
- *
- * <p>Note: The private variables in this class are converted into JSON.
- */
-public class DataComment {
+  private long id;
+  private String user;
+  private String userComment;
+  private long timestamp;
 
-  /** List of comments, e.g. "This looks great!" */
-  private final List<String> history = new ArrayList<>();
-
-
-  /** Takes the users comment and appends it to the array. */
-  public void takeComments(String user, String userComment) {
-      
-    history.add(user + ": " + userComment);
-
+  public DataComment(long id, String user, String userComment, long timestamp) {
+    this.id = id;
+    this.user = user;
+    this.userComment = userComment;
+    this.timestamp = timestamp;
   }
 }
