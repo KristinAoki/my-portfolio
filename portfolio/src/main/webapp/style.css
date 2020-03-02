@@ -17,8 +17,10 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-#greeting-container {
-  margin-top: 20px;
+# history {
+  ul {
+      list-style-type: none;
+  }
 }
 
 h1 {
