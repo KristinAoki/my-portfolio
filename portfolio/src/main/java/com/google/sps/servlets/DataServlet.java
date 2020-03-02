@@ -14,6 +14,7 @@
 
 package com.google.sps.servlets;
 
+import com.google.sps.data.DataComment;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,34 +22,60 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import java.util.ArrayList;
+import java.util.List;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-  public static ArrayList<String> get_comments() { 
-    ArrayList<String> comments = new ArrayList<String>();
-    comments.add("kristin");
-    comments.add("hello");
-    comments.add("world");
-    return comments;
-    }
+
+  private DataComment comments = new DataComment();
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    
-    String json = convertToJsonUsingGson(get_comments());
-
-    // Send the JSON as the response
-    response.setContentType("application/json;");
-    response.getWriter().println(json);
+      
+    /**
+    * Converts a ServerStats instance into a JSON string using the Gson library. Note: We first added
+    * the Gson library dependency to pom.xml.
+    */
+        response.setContentType("application/json;");
+        String json = new Gson().toJson(comments);
+        response.getWriter().println(json);
   }
 
-  /**
-   * Converts a ServerStats instance into a JSON string using the Gson library. Note: We first added
-   * the Gson library dependency to pom.xml.
-   */
-  private String convertToJsonUsingGson(ArrayList<String> comments) {
-    Gson gson = new Gson();
-    String json = gson.toJson(comments);
-    return json;
+  
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+    // Get the input from the form.
+    String userComment = getComment(request);
+    if (userComment == null) {
+      response.setContentType("text/html");
+      response.getWriter().println("Please enter a comment below.");
+      return;
+    }
+
+    String userName = getUser(request);
+    if (userName == null) {
+      response.setContentType("text/html");
+      response.getWriter().println("Please enter your name below.");
+      return;
+    }
+    comments.takeComments(userName, userComment);
+    // Redirect back to the HTML page.
+    response.sendRedirect("/index.html");
   }
+
+  /** Returns the choice entered by the player, or -1 if the choice was invalid. */
+  private String getComment(HttpServletRequest request) {
+    // Get the input from the form.
+    // String user = request.getParameter("user_name");
+    String userComment = request.getParameter("comment");
+    return userComment;
+    }
+  private String getUser(HttpServletRequest request) {
+    // Get the input from the form.
+    // String user = request.getParameter("user_name");
+    String user = request.getParameter("user_name");
+    return user;
+    }
 }
