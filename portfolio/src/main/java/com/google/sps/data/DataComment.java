@@ -14,7 +14,7 @@
 
 package com.google.sps.data;
 
-// A comment to be listes.
+// A comment to be listed.
 public final class DataComment {
 
   private long id;

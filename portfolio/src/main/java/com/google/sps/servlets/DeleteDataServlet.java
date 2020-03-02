@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
+/** Servlet that deletes and returns comment data */
 @WebServlet("/delete-comment")
 public class DeleteDataServlet extends HttpServlet {
 
