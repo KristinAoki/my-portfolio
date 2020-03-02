@@ -15,26 +15,41 @@
 /**
  * Adds a message from data servlet to the page.
  */
-function getData() {
-    console.log('Fetching data.');
-    const responsePromise = fetch('/random-quote');
-    responsePromise.then(handleResponse);
-}
 
-function handleResponse (response) {
-    const textPromise = response.text();
-    textPromise.then(addQuoteToDom);
-}
-
-function addDataToDom(quote) {
-  console.log('Adding data to dom: ' + data);
-
-  const dataContainer = document.getElementById('data-container');
-  dataContainer.innerText = data;
-}
-
-function getDataUsingArrowFunctions() {
-  fetch('/data').then(response => response.text()).then((data) => {
-    document.getElementById('data-container').innerText = data;
+function loadComments() {
+  fetch('/list-comments').then(response => response.json()).then((comments) => {
+    const commentListElement = document.getElementById('history');
+    comments.forEach((comment) => {
+      commentListElement.appendChild(createTaskElement(comment));
+    })
   });
+}
+
+/** Creates an element that represents a comment, including its delete button. */
+function createTaskElement(comment) {
+  const commentElement = document.createElement('li');
+  commentElement.className = 'comment';
+
+  const contentElement = document.createElement('span');
+  contentElement.innerText = comment.user + "\n" + comment.comment
+
+  const deleteButtonElement = document.createElement('button');
+  deleteButtonElement.innerText = 'Delete';
+  deleteButtonElement.addEventListener('click', () => {
+    deleteComment(comment);
+
+    // Remove the task from the DOM.
+    commentElement.remove();
+  });
+
+  commentElement.appendChild(contentElement);
+  commentElement.appendChild(deleteButtonElement);
+  return commentElement;
+}
+
+/** Tells the server to delete the task. */
+function deleteComment(comment) {
+  const params = new URLSearchParams();
+  params.append('id', comment.id);
+  fetch('/delete-comment', {method: 'POST', body: params});
 }

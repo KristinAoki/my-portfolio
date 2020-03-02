@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getDataUsingArrowFunctions()">
     <div id="content">
       <h1>Kristin Aoki</h1>
       <img src="/images/last_page-9-copy.png" alt="Image of Kristin Aoki" style="display:block;margin-left:auto;margin-right:auto;">
@@ -60,10 +60,19 @@
       <p>Phone Number: <a href="tel:2102540921">(210)254-0921</a></p>
       <p><a href="/documents/Resume.pdf" download>Resume</a></p>
 
-      <h2>Content from Data Servlet</h2>
-      <p>Click here to see message from data servlet:</p>
-      <button onclick="getDataUsingArrowFunctions()">Fetch a quote!</button>
-      <div id="data-container">
+      <h2>Comments</h2>
+      <h3>Previous Comments</h3>
+      <p id="history"></p>
+      <hr/>
+      <form action="/data" method="POST">
+            <p>Name:</p>
+            <input type="text" name="user_name"/>
+            <p>Leave comments below:</p>
+            <textarea rows="10" cols="100" name="comment"></textarea>
+            <br/><br/>
+            <input type="submit" value="Add Comment"/>
+      </form>
+      
     </div>
     <footer> 
         <a href="https://www.linkedin.com/in/kristin-aoki-3a2303170/" target="blank">
