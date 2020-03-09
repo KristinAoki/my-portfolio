@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="script.js"></script>
   </head>
-  <body onload="getDataUsingArrowFunctions()">
+  <body onload="loadComments()">
     <div id="content">
       <h1>Kristin Aoki</h1>
       <img src="/images/last_page-9-copy.png" alt="Image of Kristin Aoki" style="display:block;margin-left:auto;margin-right:auto;">
@@ -62,7 +62,16 @@
 
       <h2>Comments</h2>
       <h3>Previous Comments</h3>
-      <p id="history"></p>
+      <select id="language" onchange="requestTranslation();">
+            <option value="en" selected="selected">-- Select Your Language --</option>
+            <option value="ar">Arabic</option>
+            <option value="zh">Chinese</option>
+            <option value="fr">French</option>
+            <option value="it">Italian</option>
+            <option value="es">Spanish</option>
+      </select>
+
+      <ul id="history"></ul>
       <hr/>
       <form action="/data" method="POST">
             <p>Name:</p>
