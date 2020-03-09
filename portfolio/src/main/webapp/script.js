@@ -31,14 +31,15 @@ function createTaskElement(comment) {
   commentElement.className = 'comment';
 
   const contentElement = document.createElement('span');
-  contentElement.innerText = comment.user + "\n" + comment.comment
+  console.log(comment.comment);
+  contentElement.innerText = comment.user + "\n" + comment.timestamp + "\n";
 
   const deleteButtonElement = document.createElement('button');
   deleteButtonElement.innerText = 'Delete';
   deleteButtonElement.addEventListener('click', () => {
     deleteComment(comment);
 
-    // Remove the task from the DOM.
+    //Remove the task from the DOM.
     commentElement.remove();
   });
 
