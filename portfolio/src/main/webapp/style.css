@@ -58,10 +58,10 @@ body{
     flex: 1 0;
 }
 
-@media (max-device-width: 750px) {
+@media (max-width: 750px) {
     #about-grid {grid-template-columns: 1fr};
-    #work-grid {grid-template-columns: 1fr 1fr}
-    textarea {width: 100%}
+    #work-grid {grid-template-columns: 1fr 1fr};
+    textarea {width: 100%};
 }
 
 #navbar {
