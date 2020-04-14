@@ -17,9 +17,9 @@
  */
 
 function loadComments() {
-  fetch('/list-comments').then(response => response.json()).then((comments) => {
+  fetch('/list-comments').then(response => response.json()).then((allComments) => {
     const commentListElement = document.getElementById('history');
-    comments.forEach((comment) => {
+    allComments.forEach((comment) => {
       commentListElement.appendChild(createTaskElement(comment));
     })
   });
@@ -31,8 +31,8 @@ function createTaskElement(comment) {
   commentElement.className = 'comment';
 
   const contentElement = document.createElement('span');
-  console.log(comment.comment);
-  contentElement.innerText = comment.user + "\n" + comment.timestamp + "\n";
+  //console.log(comment.comment);
+  contentElement.innerText = comment.user + "\n" + comment.userComment + "\n" + "\n";
 
   const deleteButtonElement = document.createElement('button');
   deleteButtonElement.innerText = 'Delete';
@@ -53,4 +53,20 @@ function deleteComment(comment) {
   const params = new URLSearchParams();
   params.append('id', comment.id);
   fetch('/delete-comment', {method: 'POST', body: params});
+}
+
+function translateComment() {
+    // getting comment and language code
+    const comment = document.getElementById('history').value;
+    const languageCode = document.getElementById('language').value;
+
+    // determine where to store translated comments
+    const resultContainer = document.getElementById('results');
+    const params = new URLSearchParams();
+        params.append('comment', comment);
+        params.append('languageCode', languageCode);
+
+    fetch('/translate', {method: 'POST', body: params}).then(response => response.json()).then((translatedComment) => {
+        resultContainer.innerText = translatedComment;
+        });
 }
