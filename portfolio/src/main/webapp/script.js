@@ -12,6 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+  } else {
+    document.getElementById("navbar").style.padding = "80px 10px";
+  }
+}
 /**
  * Adds a message from data servlet to the page.
  */
@@ -55,18 +65,18 @@ function deleteComment(comment) {
   fetch('/delete-comment', {method: 'POST', body: params});
 }
 
-function translateComment() {
-    // getting comment and language code
-    const comment = document.getElementById('history').value;
-    const languageCode = document.getElementById('language').value;
+// function translateComment() {
+//     // getting comment and language code
+//     const comment = document.getElementById('history').value;
+//     const languageCode = document.getElementById('language').value;
 
-    // determine where to store translated comments
-    const resultContainer = document.getElementById('results');
-    const params = new URLSearchParams();
-        params.append('comment', comment);
-        params.append('languageCode', languageCode);
+//     // determine where to store translated comments
+//     const resultContainer = document.getElementById('results');
+//     const params = new URLSearchParams();
+//         params.append('comment', comment);
+//         params.append('languageCode', languageCode);
 
-    fetch('/translate', {method: 'POST', body: params}).then(response => response.json()).then((translatedComment) => {
-        resultContainer.innerText = translatedComment;
-        });
-}
+//     fetch('/translate', {method: 'POST', body: params}).then(response => response.json()).then((translatedComment) => {
+//         resultContainer.innerText = translatedComment;
+//         });
+// }
