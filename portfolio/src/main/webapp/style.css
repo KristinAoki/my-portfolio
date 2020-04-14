@@ -1,5 +1,12 @@
+html {
+    height: 100%;
+}
+
 body{
     background-color: #def2f1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 #content {
@@ -8,6 +15,7 @@ body{
   width: 650px;
   padding-bottom: 30px;
   font-family: 'Roboto', sans-serif;
+  flex: 1 0;
 }
 
 # content-photography {
@@ -15,12 +23,11 @@ body{
     margin-right: auto;
     padding-bottom: 30px;
     font-family: 'Roboto', sans-serif;
+    flex: 1 0;
 }
 
-# history {
-  ul {
+ul#history {
       list-style-type: none;
-  }
 }
 
 h1 {
@@ -51,6 +58,7 @@ footer {
     left: 0;
     right: 0;
     background-color: #2b7a78;
+    flex-shrink: 0;
 }
 
 .image-thumbnails {
