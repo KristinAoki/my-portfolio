@@ -59,7 +59,8 @@ body{
 }
 
 @media (max-device-width: 750px) {
-    #grid-container {grid-template-columns: 1fr};
+    #about-grid {grid-template-columns: 1fr};
+    #work-grid {grid-template-columns: 1fr 1fr}
     textarea {width: 100%}
 }
 
