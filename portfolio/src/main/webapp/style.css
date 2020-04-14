@@ -12,7 +12,7 @@ body{
 #content {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 350px;
+  margin-top: 250px;
   width: 650px;
   padding-bottom: 30px;
   font-family: 'Roboto', sans-serif;
@@ -28,10 +28,39 @@ body{
     flex: 1 0;
 }
 
-#grid-container{
+#about-grid {
     display: grid;
-    grid-template-columns: 20% auto;
-    grid-gap: 10px; 
+    grid-template-columns: 320px auto;
+    max-width: 60%;
+    grid-gap: 30px;
+    margin: 0 auto;
+    margin-top: 350px;
+    padding-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    flex: 1 0;
+}
+
+.item1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#work-grid {
+    display: grid;
+    grid-template-columns: 320px auto;
+    max-width: 60%;
+    grid-gap: 30px;
+    margin: 0 auto;
+    margin-top: 350px;
+    padding-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    flex: 1 0;
+}
+
+@media (max-device-width: 750px) {
+    #grid-container {grid-template-columns: 1fr};
+    textarea {width: 100%}
 }
 
 #navbar {
@@ -39,10 +68,23 @@ body{
     top: 0;
     overflow: hidden;
     transition: 0.4s;
-    padding: 90px 10px;
+    padding: 90px 10px 150px;
     position: fixed;
     width: 100%;
+    transform-style: 0.4s;
 
+}
+
+#navbar2 {
+    background-color: #2b7a78;
+    top: 0;
+    overflow: hidden;
+    transition: 0.4s;
+    padding: 30px 10px;
+    position: fixed;
+    width: 100%;
+    transform-style: 0.4s;
+    float: right;
 }
 
 #navbar-center {
@@ -105,4 +147,10 @@ footer {
 
 .image-thumbnails img:hover {
   border: thin solid black;
+}
+
+textarea {
+    width: 100%;
+    max-height: 50vh;
+    min-height: 5em;
 }
