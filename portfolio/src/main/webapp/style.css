@@ -1,5 +1,10 @@
 html {
     height: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body{
@@ -46,24 +51,6 @@ body{
     margin-right: auto;
 }
 
-#work-grid {
-    display: grid;
-    grid-template-columns: 320px auto;
-    max-width: 60%;
-    grid-gap: 30px;
-    margin: 0 auto;
-    margin-top: 350px;
-    padding-bottom: 30px;
-    font-family: 'Roboto', sans-serif;
-    flex: 1 0;
-}
-
-@media (max-width: 750px) {
-    #about-grid {grid-template-columns: 1fr};
-    #work-grid {grid-template-columns: 1fr 1fr};
-    textarea {width: 100%};
-}
-
 #navbar {
     background-color: #2b7a78;
     top: 0;
@@ -76,24 +63,62 @@ body{
 
 }
 
-#navbar2 {
-    background-color: #2b7a78;
-    top: 0;
-    overflow: hidden;
-    transition: 0.4s;
-    padding: 30px 10px;
-    position: fixed;
-    width: 100%;
-    transform-style: 0.4s;
-    float: right;
-}
-
 #navbar-center {
     float: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 750px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+    #about-grid {grid-template-columns: 1fr};
+    textarea {width: 100%};
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
 }
 
 ul#history {
