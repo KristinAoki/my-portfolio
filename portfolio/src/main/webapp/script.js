@@ -15,11 +15,14 @@
 
 window.onscroll = function() {scrollFunction()};
 
+var nav = document.getElementById("navbar");
+var sticky = nav.offsetTop;
+
 function scrollFunction() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.padding = "30px 10px";
+    if (window.pageYOffset > sticky) {
+    nav.classList.add("sticky");
   } else {
-    document.getElementById("navbar").style.padding = "90px 10px 150px";
+    nav.classList.remove("sticky");
   }
 }
 /**

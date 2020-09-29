@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
   <head>
     <meta charset="UTF-8">
@@ -7,22 +8,66 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,700|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script.js"></script>
   </head>
   <body onload="loadComments()">
-    <div id="navbar">
-            <div id="navbar-center">
-                <h1>Welcome!</h1>
-                <a href="index.html">Home</a> | 
-                <a href="work.html">Work</a> | 
-                <a href="about.html">About</a> | 
-                <a href="contact.html">Contact</a>
+    <div class="top-container">
+        <h1>Home</h1>
+      </div>
+      <div class="navbar" id="navbar">
+        <div class="navbar-center">
+            <a href="index.html">Home</a> | 
+            <a href="work.html">Work</a> | 
+            <a href="about.html">About</a> | 
+            <a href="contact.html">Contact</a>
+        </div>
+        </div>
+    <div class="content">
+      <p>Welcome and hello to my portfolio! I hope you learn more about me and if you would like to connect check out my contact information 
+          <a href="./contact.html" style="text-decoration: underline; color: black">here</a>. Hope you have a great day!
+      </p>
+      <h2>Featured Work</h2>
+      <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="images/textEditor.png" alt="Text editor." style="width: 100%">
+                    <div class="container">
+                        <h3>Nucleus Text Editor</h3>
+                        <p class="title">Software Systems</p>
+                        <p>A terminal base text editor.
+                        </p>
+                        <button class="button"><a href="https://github.com/KristinAoki/SoftSysAokiChowdhary" target="blank" 
+                            style="color:white;">Learn More</a></button>
+                    </div>
+                </div>
             </div>
-    </div>
-    <div id="content">
-      <p>Welcome and hello to my portfolio! I hope you learn more about me and if you would like to more check out my contact info 
-          <a href="contact.html"><u>here</u></a>. Hope you have a great day!
-      
+            <div class="column">
+                <div class="card">
+                    <img src="images/matches.png" alt="Graph of paired nodes." style="width: 100%">
+                    <div class="container">
+                        <h3>Matchmaker</h3>
+                        <p class="title">Data Structures and Algorithms</p>
+                        <p>Matchmaker program that predicts the best match for a person using the Hungarian Matching Algorithm.</p>
+                        <button class="button"><a href="https://github.com/18chowdhary/MatchmakingDSA" target="blank"  
+                            style="color:white;">Learn More</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="images/portfolio.png" alt="Web browser with home screen." style="width: 100%">
+                    <div class="container">
+                        <h3>Software Product Sprint</h3>
+                        <p class="title">Google</p>
+                        <p>Designed and implemented a personal portfolio using Java, JavaScript, HTML, and 
+                            CSS over the course of 10 weeks, leveraging various Google Cloud Platform APIs, including App Engine and Datastore.
+                        </p>
+                        <button class="button"><a href="https://buildyourfuture.withgoogle.com/programs/softwareproductsprint/" target="blank"  
+                            style="color:white;">Learn More</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr/>
       <h2>Comments</h2>
       <h3>Previous Comments</h3>
       <!-- <select id="language" onchange="translateComment();">
@@ -38,10 +83,10 @@
       <ul id="history"></ul>
       <hr/>
       <form action="/new-comment" method="POST">
-            <p>Name:</p>
-            <input type"text" name="user_name"/>
-            <p>Leave comments below:</p>
-            <textarea name="comment_field"></textarea>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name"/>
+            <label for="comment">Leave comments below:</label>
+            <textarea id="comment" name="comment_field"></textarea>
             <br/><br/>
             <input type="submit" value="Add Comment"/>
       </form>
@@ -49,9 +94,11 @@
     </div>
     <footer> 
         <a href="https://www.linkedin.com/in/kristin-aoki-3a2303170/" target="blank">
-            <i class="fa fa-linkedin-square" style="font-size:36px;color:black"></i></a>
+            <i class="fa fa-linkedin-square"></i></a>
         <a href="https://github.com/KristinAoki" target="blank">
-            <i class="fa fa-github" style="font-size:36px;color:black"></i></a></br>
-        <p>&copy;Copyright 2020 | Designed by: Kristin Aoki</p>
+            <i class="fa fa-github"></i></a></br>
+        <p>&copy; Copyright 2020 | Designed by: Kristin Aoki</p>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>

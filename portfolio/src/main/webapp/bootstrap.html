@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home - Kristin Aoki Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,700|Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteName</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <p>Welcome and hello to my portfolio! I hope you learn more about me and if you would like to more check out my contact info 
+          <a href="./contact.html" style="text-decoration: underline; color: black">here</a>. Hope you have a great day!
+        </p>
+      
+        <h2>Comments</h2>
+        <h3>Previous Comments</h3>
+        <!-- <select id="language" onchange="translateComment();">
+                <option value="en" selected="selected">-- Select Your Language --</option>
+                <option value="ar">Arabic</option>
+                <option value="zh">Chinese</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="it">Italian</option>
+                <option value="es">Spanish</option>
+        </select> -->
+        <!-- <ul id="results"></ul> -->
+        <ul id="history"></ul>
+        <hr/>
+        <form action="/new-comment" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name"/>
+            </div>
+            <div class="form-group">
+                <label for="comment">Leave comments below:</label>
+                <textarea id="comment" name="comment_field"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Add Comment</button>
+        </form>
+    </div>
+
+    <footer class="border-top">
+        <div class="container">
+            <a href="https://www.linkedin.com/in/kristin-aoki-3a2303170/" target="blank">
+                <i class="fa fa-linkedin-square"></i></a>
+            <a href="https://github.com/KristinAoki" target="blank">
+                <i class="fa fa-github"></i></a></br>
+            <p>&copy; Copyright 2020 | Designed by: Kristin Aoki</p>        
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

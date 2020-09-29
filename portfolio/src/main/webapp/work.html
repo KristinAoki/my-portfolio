@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
   <head>
     <meta charset="UTF-8">
@@ -7,30 +8,31 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,700|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script.js"></script>
   </head>
   <body>
-        <div id="navbar">
-            <div id="navbar-center">
-                <h1>Work</h1>
-                <a href="index.html">Home</a> | 
-                <a href="work.html">Work</a> | 
-                <a href="about.html">About</a> | 
-                <a href="contact.html">Contact</a>
-            </div>
+      <div class="top-container">
+        <h1>Work</h1>
+      </div>
+      <div class="navbar" id="navbar">
+        <div class="navbar-center">
+            <a href="index.html">Home</a> | 
+            <a href="work.html">Work</a> | 
+            <a href="about.html">About</a> | 
+            <a href="contact.html">Contact</a>
         </div>
-      <div id="content">
-        <h3><a href="/documents/Resume.pdf" download style="font-family: 'Playfair Display', serif;"><u>Resume</u></a></h3>
+        </div>
+      <div class="content">
+        <h3><a href="/documents/Resume.pdf" download style="font-family: 'Playfair Display', serif; color: black; text-decoration: underline">Resume</a></h3>
         <h2>On Going</h2>
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="images/homage3-2-copy.jpg" alt="Black and white image of rock backed by tree" style="width: 100%">
+                    <img src="images/homage3-2-copy.jpg" alt="Black and white image of rock backed by tree." style="width: 100%">
                     <div class="container">
                         <h3>Photography</h3>
                         <p class="title">Personal Project</p>
-                        <p>Over the pass two years, I have enjoyed photography people and landscapes.
-                            CLick learn more to see collection of images.
+                        <p>Over the pass two years, I have enjoyed photographing people and landscapes.
+                            Click learn more to see collection of images.
                         </p>
                         <button class="button"><a href="photography.html" style="color:white;">Learn More</a></button>
                     </div>
@@ -41,7 +43,7 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="images/textEditor.png" alt="Text editor" style="width: 100%">
+                    <img src="images/textEditor.png" alt="Text editor." style="width: 100%">
                     <div class="container">
                         <h3>Nucleus Text Editor</h3>
                         <p class="title">Software Systems</p>
@@ -52,23 +54,36 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="column">
+            <div class="column">
                 <div class="card">
-                    <img src="" alt="" style="width: 100%">
+                    <img src="images/matches.png" alt="Graph of paired nodes." style="width: 100%">
                     <div class="container">
                         <h3>Matchmaker</h3>
                         <p class="title">Data Structures and Algorithms</p>
-                        <p>Matchmaker program that predicts the best match for a person using the Hungarian Algorithm.</p>
-                        <button class="button"><a href="#" style="color:white;">Learn More</a></button>
+                        <p>Matchmaker program that predicts the best match for a person using the Hungarian Matching Algorithm.</p>
+                        <button class="button"><a href="https://github.com/18chowdhary/MatchmakingDSA" style="color:white;">Learn More</a></button>
                     </div>
                 </div>
-            </div> -->
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="images/portfolio.png" alt="Web browser with home screen." style="width: 100%">
+                    <div class="container">
+                        <h3>Software Product Sprint</h3>
+                        <p class="title">Google</p>
+                        <p>Designed and implemented a personal portfolio using Java, JavaScript, HTML, and 
+                            CSS over the course of 10 weeks, leveraging various Google Cloud Platform APIs, including App Engine and Datastore.
+                        </p>
+                        <button class="button"><a href="https://buildyourfuture.withgoogle.com/programs/softwareproductsprint/" style="color:white;">Learn More</a></button>
+                    </div>
+                </div>
+            </div>
         </div>
         <h2>2019</h2>
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="images/cover-copy.png" alt="Profile of a woman" style="width: 100%">
+                    <img src="images/cover-copy.png" alt="Profile of a woman." style="width: 100%">
                     <div class="container">
                         <h3>Self-Portrait: Photography Book</h3>
                         <p class="title">Advanced Photography</p>
@@ -80,7 +95,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="images/pop-up.png" alt="Web browser with home screen" style="width: 100%">
+                    <img src="images/pop-up.png" alt="Web browser with home screen." style="width: 100%">
                     <div class="container">
                         <h3>POP-UP Festival</h3>
                         <p class="title">Six Seconds</p>
@@ -93,7 +108,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="images/cw-guide.png" alt="Web browser with login displayed" style="width: 100%">
+                    <img src="images/cw-guide.png" alt="Web browser with login displayed." style="width: 100%">
                     <div class="container">
                         <h3>Candidates' Weekend Guide</h3>
                         <p class="title">Software Design</p>
@@ -104,37 +119,35 @@
             </div>
         </div>
         <div class="row">
-            <div class="column">
-                <div class="card">
-                    <img src="images/finalrender.jpg" alt="CAD render of robot" style="width: 100%">
-                    <div class="container">
-                        <h3>FollowBot</h3>
-                        <p class="title">Principles of Engineering</p>
-                        <p>Designed and built a robot that follows a person.</p>
-                        <button class="button"><a href="http://poe.olin.edu/2019/followbot/" target="blank" 
-                            style="color:white;">Learn More</a></button>
-                    </div>
+            <div class="card">
+                <img src="images/finalrender.jpg" alt="CAD render of robot." style="width: 100%">
+                <div class="container">
+                    <h3>FollowBot</h3>
+                    <p class="title">Principles of Engineering</p>
+                    <p>Designed and built a robot that follows a person.</p>
+                    <button class="button"><a href="http://poe.olin.edu/2019/followbot/" target="blank" 
+                        style="color:white;">Learn More</a></button>
                 </div>
             </div>
-            <div class="column">
-                <div class="card">
-                    <img src="images/averagemap.jpg" alt="Map of US with a pop-up box" style="width: 100%">
-                    <div class="container">
-                        <h3>Interactive Map</h3>
-                        <p class="title">Software Design</p>
-                        <p>The map shows the rates of death across the United States.</p>
-                        <button class="button"><a href="https://github.com/sd19spring/Death-Rate-Interactive-Map" target="blank" 
-                            style="color:white;">Learn More</a></button>
-                    </div>
+            <div class="card">
+                <img src="images/averagemap.jpg" alt="Map of US with a pop-up box." style="width: 100%">
+                <div class="container">
+                    <h3>Interactive Map</h3>
+                    <p class="title">Software Design</p>
+                    <p>The map shows the rates of death across the United States.</p>
+                    <button class="button"><a href="https://github.com/sd19spring/Death-Rate-Interactive-Map" target="blank" 
+                        style="color:white;">Learn More</a></button>
                 </div>
             </div>
         </div>
     </div>
     <footer> 
         <a href="https://www.linkedin.com/in/kristin-aoki-3a2303170/" target="blank">
-            <i class="fa fa-linkedin-square" style="font-size:36px;color:black"></i></a>
+            <i class="fa fa-linkedin-square"></i></a>
         <a href="https://github.com/KristinAoki" target="blank">
-            <i class="fa fa-github" style="font-size:36px;color:black"></i></a></br>
-        <p>&copy;Copyright 2020 | Designed by: Kristin Aoki</p>
+            <i class="fa fa-github"></i></a></br>
+        <p>&copy; Copyright 2020 | Designed by: Kristin Aoki</p>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
